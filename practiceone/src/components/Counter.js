@@ -1,6 +1,5 @@
 import React from 'react';
-import ClickCounter from './ClickCounter'
-import HoverCounter from './HoverCounter';
+
 
 export default class Counter extends React.Component {
 
@@ -16,14 +15,9 @@ export default class Counter extends React.Component {
 
     render() {
         const {count} = this.state;
-        return(
+        const {children} = this.props;
 
-            <div>
-                <ClickCounter count = {count} incrementCounter = {this.incrementCounter}/>
-                <HoverCounter count = {count} incrementCounter = {this.incrementCounter}/>
-            </div>
+        return children(count,this.incrementCounter);
 
-
-        );
     }
 }
