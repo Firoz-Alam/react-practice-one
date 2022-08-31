@@ -1,10 +1,12 @@
+import withCounter from "./HOC/withCounter";
 
-export default function HoverCounter({count,incrementCounter}){
-
-    return(
+const HoverCounter = (props)=>{
+    const {count,incrementCounter} = props;
+    return (
         <div>
-            <h1  onMouseOver = {incrementCounter}> Hovered {count} Times </h1>
+            <h1 onMouseOver={incrementCounter}>Click {count} Times</h1>
         </div>
     );
-
 }
+
+export default withCounter(HoverCounter);
